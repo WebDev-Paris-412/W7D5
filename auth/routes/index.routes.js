@@ -12,6 +12,8 @@ router.use("/auth", require("./auth.routes.js"))
 
 router.use(isAuthenticated)
 
+router.use("/favorites", require("./favorite.routes.js"))
+
 router.use("/pets", require("./pets.routes.js"))
 
 router.get("/secret", async (req, res, next) => {
