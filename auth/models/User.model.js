@@ -5,21 +5,20 @@ const userSchema = new Schema(
 		username: { type: String, maxLength: 40, minLength: 2 },
 		email: {
 			type: String,
-			required: [true, "Email is required."],
-			unique: true,
 			lowercase: true,
 			trim: true,
 		},
 		password: {
 			type: String,
-			required: [true, "Password is required."],
 			select: false,
 		},
+		githubId: Number,
 		role: {
 			type: String,
 			enum: ["admin", "super-admin", "user"],
 			default: "user",
 		},
+		picture: String,
 	},
 	{
 		timestamps: true,
